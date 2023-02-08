@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { Redirect, useParams } from 'react-router-dom';
-import { useUser } from '../context/UserContext';
-import { authUser } from '../services/auth';
+import { useUser } from '../../context/UserContext';
+import { authUser } from '../../services/auth';
+import './Auth.css';
 
 export default function Auth() {
   const { type } = useParams();
@@ -26,7 +27,7 @@ export default function Auth() {
   }
 
   return (
-    <div>
+    <div className="form">
       <div className="form-controls">
         <label>Email:</label>
         <input type="text" value={email} onChange={(e) => setEmail(e.target.value)} />
